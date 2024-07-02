@@ -66,7 +66,8 @@ class RestaurantPizzasResource(Resource):
             db.session.commit()
             return restaurant_pizza.to_dict(), 201
         except ValueError as e:
-            return {"errors": [str(e)]}, 400
+            return {"errors": ["validation errors"]}, 400  # Adjust error message
+
 
 
 api.add_resource(RestaurantsResource, '/restaurants')
